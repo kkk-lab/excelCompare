@@ -44,7 +44,7 @@ class SelectFile():
     def excel_cmp(self):
         if self.file_1.get()==self.file_2.get():
             responses=messagebox.askretrycancel(title='Wrong',message='请不要选择同一个文件！')
-        print('confirm')
+        # print('confirm')
         pass
 
 
