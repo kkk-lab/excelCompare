@@ -52,8 +52,8 @@ class SelectFile():
                 response=messagebox.showinfo(title='Nice',message='数据一致！')
                 pass#表示数据一致
             else:
-                print(temp.diff)
-                print('different!')
+                # print(temp.diff)
+                # print('different!')
                 workbook = xlwt.Workbook()
                 pattern = xlwt.Pattern()  # Create the Pattern
                 pattern.pattern = xlwt.Pattern.SOLID_PATTERN  # May be: NO_PATTERN, SOLID_PATTERN, or 0x00 through 0x12
