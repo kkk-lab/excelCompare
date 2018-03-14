@@ -32,11 +32,10 @@ class XlCmp():
 
     def save_location(self,i,j,k,l):
         '''
-        i代表sheet，j代表行数，k代表列数
+        i代表sheet，j代表行数，k代表列数,l代表基准文件的内容
         '''
         self.same=False
         temp=self.diff.get(i,[])
         temp.append((j,k,l))
         self.diff[i]=temp
-        print(1)
 
