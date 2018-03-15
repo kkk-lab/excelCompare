@@ -78,8 +78,5 @@ class SelectFile():
         pass
 
 
-
-try:
+if __name__=='__main__':
     a=SelectFile()
-except:
-    pass
