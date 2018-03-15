@@ -37,6 +37,8 @@ class SelectFile():
 
     def get_file_2(self):
         self.file_2.set(tkinter.filedialog.askopenfilename(title='选择一个文件',filetypes=[('Excel文件','.xls')]))
+        #filetypes=[('Excel文件','.xls'),('EXCEL高级版','.xlsx')])
+        #filetypes=[('Excel文件','.xls*')])
         # response=messagebox.askretrycancel(title='Nice',message='Please confirm')
         # label_1=tkinter.Label(self.win,text=self.file_2)
         # label_1.pack()
