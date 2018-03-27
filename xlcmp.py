@@ -16,15 +16,20 @@ class XlCmp():
 
         nsheets_1=f1.nsheets
         nsheets_2=f2.nsheets
-        # if nsheets_1!=nsheets_2:raise EOFError#后续要在前面捕获异常，并表示两个EXCEL含sheet数量不一致
-        for i in range(nsheets_2):
+        if nsheets_1 != nsheets_2:raise EOFError#后续要在前面捕获异常，并表示两个EXCEL含sheet数量不一致
+        for i in range(1,nsheets_1):
             sheet_1=f1.sheet_by_index(i)
             sheet_2=f2.sheet_by_index(i)
-            for j in range(sheet_2.nrows):
+            temp=min(sheet_1.nrows,sheet_2.nrows)
+            for j in range(temp):
+                # print(j)
+                # print(sheet_1.name)
                 row_1=sheet_1.row_values(j)
+                if '密级：公开' in str(row_1[0]) or '' in str(row_1):continue
+                print(row_1)
                 rows_2=sheet_2.row_values(j)
                 if row_1==rows_2:continue
-                for k in range(len(rows_2)):
+                for k in range(min(len(rows_2),len(row_1))):
                     if rows_2[k]!=row_1[k]:
                         l=rows_2[k]
                         self.save_location(sheet_2.name,j,k,l)
